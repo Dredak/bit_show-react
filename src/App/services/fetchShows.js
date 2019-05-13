@@ -8,11 +8,10 @@ const fetchShows = () => {
     return fetch(API_SHOWS)
         .then(shows => shows.json())
         .then(shows =>{
-            console.log(shows);
             return shows.slice(0, 50).map((show) => {
-                const { id, name, image, rating } = show;
-                return new Show(id, name, image.medium, rating.average);
-            })}
+                return new Show(show);
+            })
+        }
         )
 }
 export {

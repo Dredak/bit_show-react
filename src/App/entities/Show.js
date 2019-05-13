@@ -1,9 +1,9 @@
 class Show {
-    constructor(id, name, img, rating) {
+    constructor({id, name, image, rating}) {
         this.id = id;
         this.name = name;
-        this.img = img;
-        this.rating = rating;
+        this.img = image.medium;
+        this.rating = rating.average;
     }
     getData() {
         return `${this.id} ${this.name} ${this.rating}`
