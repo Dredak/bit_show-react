@@ -7,13 +7,21 @@ const fetchShows = () => {
 
     return fetch(API_SHOWS)
         .then(shows => shows.json())
-        .then(shows =>{
-            return shows.slice(0, 50).map((show) => {
-                return new Show(show);
-            })
-        }
-        )
+        .then(shows => {
+            return shows.slice(0, 50).map((show) => new Show(show))
+        })
+}
+
+
+const fetchSingleShow = (id) => {
+
+    return fetch(`${API_BASE_URL}/shows/${id}?embed[]=seasons&embed[]=cast`)
+        .then(singleShow => singleShow.json())
+        .then((singleShow) => new Show(singleShow))
+
+
 }
 export {
-    fetchShows
+    fetchShows,
+    fetchSingleShow
 }

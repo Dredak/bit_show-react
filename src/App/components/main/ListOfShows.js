@@ -14,7 +14,6 @@ class ListOfShows extends React.Component {
         fetchShows()
             .then((shows) => {
                 this.setState({ listOfShows: shows })
-                console.log(this.state.listOfShows)
             })
     }
 
@@ -27,11 +26,11 @@ class ListOfShows extends React.Component {
             return 'LOADING.........'
         }
         return (
-            <>
+            <div className="row col-10 offset-2">
                 {this.state.listOfShows.map((show) => {
-                    return <ShowCard show={show} />
+                    return <ShowCard show={show} key={`${show.id}`}/>
                 })}
-            </>
+            </div>
             )
     }
 }
