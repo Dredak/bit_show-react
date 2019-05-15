@@ -6,7 +6,6 @@ class Show {
         this.imgLarge = image.original;
         this.rating = rating.average;
         this.summary = summary;
-        this.seasons = _embedded.seasons;
         this.cast = _embedded.cast;
     }
     getData() {

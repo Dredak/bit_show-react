@@ -29,9 +29,14 @@ class SingleShow extends React.Component {
         if (!this.state.singleShow) {
             return "LOADING...........";
         }
-        return <div>
-            <img src={`${this.state.singleShow.imgLarge}`} className="col-4" />
-            <p>{this.state.singleShow.name} - {this.state.singleShow.seasons[0].endDate}</p>
+        const {name, imgLarge, summary}= this.state.singleShow;
+        console.log(this.state.singleShow.cast);
+        return <div className="row">
+            <img src={`${imgLarge}`} className="col-3 offset-1 movie-img" />
+            <div className="single-show-text-wrapper col-3">
+            <h3>{name}</h3>
+            <p>{summary.slice(3, -4)}</p>
+            </div>
         </div>;
     }
 

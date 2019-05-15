@@ -8,6 +8,7 @@ const fetchShows = () => {
     return fetch(API_SHOWS)
         .then(shows => shows.json())
         .then(shows => {
+            console.log(shows)
             return shows.map((show) => new Show(show))
         })
 }

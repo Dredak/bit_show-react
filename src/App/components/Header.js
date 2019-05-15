@@ -25,7 +25,6 @@ class Header extends React.Component {
     }
 
     onInputFocus() {
-        // this.setState(prev=> {isVisible: !prev.isVisible})
         this.setState({ isVisible: true })
     }
 
@@ -39,7 +38,6 @@ class Header extends React.Component {
     }
 
     render() {
-        console.log(this.state.isVisible);
         const filteredShows = this.state.allShows
             .filter(show => show.name.toLowerCase().includes(this.state.searchValue.toLowerCase())).slice(0, 10);
         return (

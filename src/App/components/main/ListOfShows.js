@@ -1,7 +1,6 @@
 import React from 'react';
 import ShowCard from './ShowCard';
 import { fetchShows } from './../../services/fetchShows';
-import Header from '../Header';
 
 class ListOfShows extends React.Component {
     constructor(props) {
