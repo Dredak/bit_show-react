@@ -17,6 +17,14 @@ class SingleShow extends React.Component {
         this.onLoadSingleShow(this.props.match.params.id);
     }
 
+    componentDidUpdate(prevProps) {
+        const id = this.props.match.params.id;
+        const prevId = prevProps.match.params.id
+        if (id != prevId){
+            this.onLoadSingleShow(id);
+        }
+    }
+
     render() {
         if (!this.state.singleShow) {
             return "LOADING...........";
@@ -24,7 +32,7 @@ class SingleShow extends React.Component {
         return <div>
             <img src={`${this.state.singleShow.imgLarge}`} className="col-4" />
             <p>{this.state.singleShow.name} - {this.state.singleShow.seasons[0].endDate}</p>
-            </div>;
+        </div>;
     }
 
 }

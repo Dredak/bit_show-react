@@ -15,3 +15,20 @@ code {
 .show-card{
   margin-left: 1%;
 }
+
+.visible{
+
+ display:inline;
+ position: absolute;
+ right: 50px;
+ background-color: rgb(211,211,211, 0.5);
+ border: 1px solid blue;
+ border-radius: 0px 0px 10px 10px;
+ z-index: 1;
+}
+.visible p {
+  margin-bottom: 0px;
+}
+.hidden {
+  display: none;
+}
